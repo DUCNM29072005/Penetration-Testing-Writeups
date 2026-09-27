@@ -91,8 +91,7 @@ Kết quả phát hiện endpoint đáng chú ý:
 Tiếp tục kiểm tra HTTPS:
 
 ```bash
-gobuster dir -u https://earth.local/ \
--w /usr/share/dirb/wordlists/common.txt
+gobuster dir -u https://earth.local/ -w /usr/share/dirb/wordlists/common.txt
 ```
 
 Phát hiện:
@@ -556,41 +555,3 @@ Root Password Reset
         ↓
 ROOT
 ```
-
----
-
-# 16. Security Impact
-
-Các vấn đề phát hiện trong quá trình kiểm thử có thể dẫn đến compromise toàn bộ hệ thống:
-
-### Information Disclosure
-
-Các file như `robots.txt` và `testingnotes.txt` làm lộ thông tin nội bộ, username và thông tin liên quan đến cơ chế encryption.
-
-### Weak Credential Management
-
-Thông tin dùng để truy cập admin portal có thể được suy ra từ dữ liệu public và cơ chế XOR yếu.
-
-### Remote Command Execution
-
-Admin panel cho phép thực thi command trực tiếp trên server.
-
-### Insufficient Command Filtering
-
-Cơ chế blacklist command có thể bị bypass thông qua Base64 encoding.
-
-### Dangerous SUID Binary
-
-`reset_root` là SUID binary owned by root và chứa chức năng thay đổi mật khẩu root dựa trên các file trigger có thể được tạo bởi user có quyền thấp.
-
-### Hardcoded Root Password
-
-Root password được hardcode trực tiếp trong binary:
-
-```text
-root:Earth
-```
-
-Điều này tạo ra nguy cơ compromise toàn bộ hệ thống.
-
----
