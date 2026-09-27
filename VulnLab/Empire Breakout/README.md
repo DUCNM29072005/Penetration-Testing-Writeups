@@ -165,7 +165,7 @@ Tiến hành tạo file `pass.tar` chứa `old_pass`:
 Sau khi tạo archive, tiến hành giải nén bằng `tar`:
 
 ```bash
-tar -xf pass.tar
+tar -xvf pass.tar
 ```
 
 Sau khi giải nén, có thể đọc nội dung của file `old_pass`.
