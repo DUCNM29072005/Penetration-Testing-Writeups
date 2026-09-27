@@ -30,8 +30,7 @@ Tiến hành truy cập web server thông qua cổng 80 để kiểm tra ứng d
 Tiếp theo sử dụng `Gobuster` để tìm kiếm các directory và file có thể truy cập:
 
 ```bash
-gobuster dir -u http://<TARGET>/ \
--w /usr/share/dirb/wordlists/common.txt
+gobuster dir -u http://<TARGET>/ -w /usr/share/dirb/wordlists/common.txt
 ```
 
 ![img](img/gobuster.png?raw=true)
@@ -69,8 +68,7 @@ Truy cập `/manual` cho thấy đây là trang Apache Manual.
 Tiếp tục sử dụng Gobuster trên `/manual` để tìm kiếm các resource ẩn:
 
 ```bash
-gobuster dir -u http://<TARGET>/manual/ \
--w /usr/share/dirb/wordlists/common.txt
+gobuster dir -u http://<TARGET>/manual/ -w /usr/share/dirb/wordlists/common.txt
 ```
 
 ![img](img/gobustermanual.png?raw=true)
