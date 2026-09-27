@@ -25,8 +25,7 @@ Kết quả cho thấy cổng `80` đang hoạt động và cung cấp dịch v�
 Tiếp theo sử dụng `Gobuster` để thực hiện directory enumeration nhằm tìm kiếm các đường dẫn và tài nguyên có thể truy cập trên web server:
 
 ```bash
-gobuster dir -u http://<TARGET>/ \
--w /usr/share/dirb/wordlists/common.txt
+gobuster dir -u http://<TARGET>/ -w /usr/share/dirb/wordlists/common.txt
 ```
 
 ![img](img/gobuster1.png?raw=true)
@@ -44,8 +43,7 @@ Truy cập vào đường dẫn này cho thấy đây là trang tài liệu củ
 Do `/manual` có thể chứa thêm các tài nguyên khác, tiếp tục thực hiện Gobuster trên đường dẫn này:
 
 ```bash
-gobuster dir -u http://<TARGET>/manual/ \
--w /usr/share/dirb/wordlists/common.txt
+gobuster dir -u http://<TARGET>/manual/ -w /usr/share/dirb/wordlists/common.txt
 ```
 
 ![img](img/gobuster2.png?raw=true)
