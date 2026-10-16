@@ -10,7 +10,7 @@ Quan sát thấy có 3 port đang mở là 22 với dịch vụ ssh, 80 http và
 
 Kẻ tấn công gửi các yêu cầu HTTP (chẳng hạn qua phương thức GET hoặc POST đến tệp như /admin/ajax.php hoặc modular.php) để tiếp cận tiến trình xử lý backend mà không cần tài khoản. Tiếp theo.  Thông qua lỗ hổng tiêm mã, mã độc SQL chèn trực tiếp các chuỗi truy vấn vào cơ sở dữ liệu để sửa đổi thông tin hệ thống. Kẻ tấn công thường chèn một tài khoản quản trị mới vào bảng ampusers hoặc chèn các tác vụ mã hóa Base64 độc hại vào bảng quản lý lịch trình cron_jobs. Khi các tác vụ cron được hệ thống gọi tự động, các đoạn mã độc này sẽ giải mã và sinh ra một backdoor web shell.
 
-Ở đây tôi sử dụng một mã nguồn để khai thác lỗ hổng này trên github [https://github.com/0xEhab/FreePBX-CVE-2025-57819-RCE]. Trước tiên tôi sử dụng công cụ này để thử với câu lệnh id
+Ở đây tôi sử dụng một mã nguồn để khai thác lỗ hổng này trên github https://github.com/0xEhab/FreePBX-CVE-2025-57819-RCE. Trước tiên tôi sử dụng công cụ này để thử với câu lệnh id
 ![img](img/idbytool.png?raw=true)
 
 # user.txt
